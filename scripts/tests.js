@@ -21,4 +21,7 @@ QUnit.test( '8.32 - Create Truck', function ( assert ) {
       { emailAddress: 'me@goldfinger.com', coffee: 'double mocha'}),
       'Adding order for me@goldfinger.com', 'Order added.');
     assert.equal(myTruck.deliverOrder('dr@no.com'), 'Delivering order for dr@no.com', 'Order delivered');
+    assert.deepEqual(myTruck.printOrders(),
+      [{"coffee": "double mocha", "emailAddress": "me@goldfinger.com"}],
+      'Orders displayed');
 });
